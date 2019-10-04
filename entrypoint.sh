@@ -35,7 +35,7 @@ cd "$GIT_REPO_PATH/$GIT_PREFIX_PATH"
 if [ "$GITCRYPT_ENABLE" = "true" ]; then
     if [ -f "$GITCRYPT_PRIVATE_KEY" ]; then
         echo "GITCRYPT_PRIVATE_KEY"
-        echo $GITCRYPT_PRIVATE_KEY
+        cat $GITCRYPT_PRIVATE_KEY
         echo "### GITCRYPT_PRIVATE_KEY ###"
         gpg --allow-secret-key-import --import "$GITCRYPT_PRIVATE_KEY"
         git-crypt unlock
