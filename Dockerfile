@@ -1,5 +1,7 @@
 FROM alpine:3.10
 
+ENV VERSION 0.6.0
+
 RUN apk update && \
   apk add --update \
     bash \
@@ -15,15 +17,17 @@ RUN apk update && \
     libstdc++ \
     gpgme \
     libressl-dev \
+    openssh \
+    openssl \
+    openssl-dev \
     make \
     g++ \
     && \
-  git clone https://github.com/AGWA/git-crypt.git && \
-  make --directory git-crypt && \
-  make --directory git-crypt install && \
-  rm -rf git-crypt && \
-  apk del libressl-dev make g++ && \
   rm -rf /var/cache/apk/*
+
+RUN curl -L https://github.com/AGWA/git-crypt/archive/$VERSION.tar.gz | tar zxv -C /var/tmp
+RUN cd /var/tmp/git-crypt-$VERSION && make && make install PREFIX=/usr/local
+RUN apk del libressl-dev make g++
 
 RUN pip install ijson awscli
 RUN adduser -h /backup -D backup
