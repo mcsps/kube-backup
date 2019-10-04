@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.10
 
 RUN apk update && \
   apk add --update \
@@ -28,7 +28,7 @@ RUN apk update && \
 RUN pip install ijson awscli
 RUN adduser -h /backup -D backup
 
-ENV KUBECTL_VERSION 1.12.0
+ENV KUBECTL_VERSION 1.15.0
 ENV KUBECTL_SHA256 ba0f8d5776d84ffef5ce5d5c31f8d892e0c13d073948d5bafbb5341ad68ef463
 ENV KUBECTL_URI https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 
