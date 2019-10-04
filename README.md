@@ -1,7 +1,8 @@
 kube-backup
 ===========
-[![Docker Repository on Quay](https://quay.io/repository/plange/kube-backup/status "Docker Repository on Quay")](https://quay.io/repository/plange/kube-backup)
-[![Docker Repository on Docker Hub](https://img.shields.io/docker/automated/ptlange/kube-backup.svg "Docker Repository on Docker Hub")](https://hub.docker.com/r/ptlange/kube-backup/)
+[![Docker Repository on Docker Hub](https://img.shields.io/docker/automated/eumel8/kube-backup.svg "Docker Repository on Docker Hub")](https://hub.docker.com/r/eumel8/kube-backup/)
+
+FORKED: https://github.com/pieterlange/kube-backup
 
 Quick 'n dirty kubernetes state backup script, designed to be ran as kubernetes Job. Think of it like [RANCID](http://www.shrubbery.net/rancid/) for kubernetes.
 
