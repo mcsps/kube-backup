@@ -11,8 +11,8 @@ RUN apk update && \
     curl \
     ca-certificates \
     jq \
-    python \
-    py-yaml \
+    python3 \
+    py3-yaml \
     py3-pip \
     libstdc++ \
     gpgme \
