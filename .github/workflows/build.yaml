@@ -19,6 +19,8 @@ jobs:
           export DOCKER_BUILDKIT=1
           docker build -f Dockerfile -t ${MTR}/${REPO}/${IMAGE}:${TAG} .
           docker push ${MTR}/${REPO}/kube-backup:${TAG}
+          docker tag ${MTR}/${REPO}/${IMAGE}:${TAG} ${MTR}/${REPO}/${IMAGE}:latest
+          docker push ${MTR}/${REPO}/kube-backup:latest
         env:
           DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
