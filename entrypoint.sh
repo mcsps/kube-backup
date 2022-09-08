@@ -5,7 +5,7 @@ if [ -z "$NAMESPACES" ]; then
 fi
 
 RESOURCETYPES="${RESOURCETYPES:-"ingress deployment configmap svc rc ds networkpolicy statefulset cronjob pvc"}"
-GLOBALRESOURCES="${GLOBALRESOURCES:-"namespace storageclass clusterrole clusterrolebinding customresourcedefinition"}"
+GLOBALRESOURCES="${GLOBALRESOURCES:-""}"
 
 # Initialize git repo
 [ -z "$DRY_RUN" ] && [ -z "$GIT_REPO" ] && echo "Need to define GIT_REPO environment variable" && exit 1
@@ -13,7 +13,7 @@ GIT_REPO_PATH="${GIT_REPO_PATH:-"/backup/git"}"
 GIT_PREFIX_PATH="${GIT_PREFIX_PATH:-"."}"
 GIT_USERNAME="${GIT_USERNAME:-"kube-backup"}"
 GIT_EMAIL="${GIT_EMAIL:-"kube-backup@example.com"}"
-GIT_BRANCH="${GIT_BRANCH:-"master"}"
+GIT_BRANCH="${GIT_BRANCH:-"main"}"
 GITCRYPT_ENABLE="${GITCRYPT_ENABLE:-"false"}"
 GITCRYPT_PRIVATE_KEY="${GITCRYPT_PRIVATE_KEY:-"/secrets/gpg-private.key"}"
 GITCRYPT_SYMMETRIC_KEY="${GITCRYPT_SYMMETRIC_KEY:-"/secrets/symmetric.key"}"
