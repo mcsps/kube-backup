@@ -13,7 +13,7 @@ RUN apk update && \
     jq \
     python \
     py-yaml \
-    py2-pip \
+    py3-pip \
     libstdc++ \
     gpgme \
     libressl-dev \
