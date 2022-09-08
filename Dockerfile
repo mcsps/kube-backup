@@ -1,6 +1,6 @@
-FROM alpine:3.10
+FROM alpine:3.16
 
-ENV VERSION 0.6.0
+ENV VERSION 0.7.0
 
 RUN apk update && \
   apk add --update \
